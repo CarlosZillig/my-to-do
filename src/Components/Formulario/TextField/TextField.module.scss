@@ -1,0 +1,22 @@
+.formContainer {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    .formLabel {
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        text-align: left;
+    }
+    .inputTarefa {
+        padding: 1.2em;
+        width: 80%;
+        border-radius: 30px;
+
+        outline: none;
+        border: 1px solid #b8b8b8;
+
+        font-size: 1em;
+    }
+}
