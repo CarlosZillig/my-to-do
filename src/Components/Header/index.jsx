@@ -1,17 +1,12 @@
 import React from 'react';
-import './header.scss'
-import MenuIcon from '@mui/icons-material/Menu';
+import styles from "./Header.module.scss"
 
 const Header = () => {
     return(
-        <header className='header'>
-            <div className="menu-container">
-                <MenuIcon 
-                    fontSize='medium' 
-                    className='menu'
-                />
+        <header className={styles.header}>
+            <div className={styles.menuContainer}>
             </div>
-            <div className='header-container'>NoteBook</div>
+            <div className={styles.headerContainer}>NoteBook</div>
         </header>
     )
 }
