@@ -1,5 +1,7 @@
+@import '../../styles/variables';
+
 .header {
-    background-color: purple;
+    background-color: $purple;
     height: 8vh;
     font-family: 'Roboto Mono', monospace;
     display: flex;

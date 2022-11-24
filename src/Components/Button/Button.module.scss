@@ -1,9 +1,13 @@
+@import '../../styles/variables';
+
 .button {
-    padding: 0.5em 2em;
-    background-color: purple;
+    padding: 0.8em 2em;
+    background-color: $purple;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     color: white;
     font-size: 1em;
-    width: 70%;
+    width: 90%;
+    margin: 1em 0;
+    box-sizing: border-box;
 }
