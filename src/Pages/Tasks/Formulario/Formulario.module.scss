@@ -1,0 +1,41 @@
+@import '../../../styles/variables';
+
+.formulario {
+    padding: $padding-hori;
+    text-align: center;
+    position: relative;
+    .erro {
+        font-family: 'Roboto', sans-serif;
+        color: red;
+        display: block;
+    }
+}
+
+.addTaskBtn__container {
+    padding: $padding;
+    box-sizing: border-box;
+    position: relative;
+    .addTaskBtn {
+        border-radius: 10px;
+        border: 1px solid $gray;
+        font-size: 1.3em;
+        width: 30px;
+        height: 30px;
+        font-weight: 300;
+        transition: 0.7s;
+    }
+    .addTaskBtn__off {
+        border-radius: 10px;
+        border: 1px solid $gray;
+        font-size: 1.3em;
+        width: 30px;
+        height: 30px;
+        font-weight: 300;
+        transform: rotate(135deg);
+    }
+}
+
+.formularioOff {
+    display: none;
+    transition: 0.7s;
+}

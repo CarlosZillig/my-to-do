@@ -1,4 +1,4 @@
-@import '../../../styles/variables';
+@import '../../../../styles/variables';
 
 .formContainer {
     display: flex;
@@ -12,24 +12,24 @@
     &-title-task {
         padding: $padding-vert;
         .inputTitle {
-            padding: 1.2em;
+            padding: 1em;
             width: 80%;
             border-radius: 10px;
     
             outline: none;
-            border: 1px solid #b8b8b8;
+            border: 1px solid $gray;
     
             font-size: 1em;
         }
     }
     &-desc-task {
         .inputDesc {
-            padding: 1.2em;
+            padding: 1em;
             width: 80%;
             border-radius: 10px;
     
             outline: none;
-            border: 1px solid #b8b8b8;
+            border: 1px solid $gray;
     
             font-size: 1em;
         }

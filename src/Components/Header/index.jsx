@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from "./Header.module.scss";
-import { TfiBook } from 'react-icons/tfi';
+import { BiMenuAltLeft } from 'react-icons/bi';
 
 const Header = () => {
     return(
         <header className={styles.header}>
-            <TfiBook
+            <BiMenuAltLeft
                 color='#fff'
-                size={18}
+                size={25}
             />
-            <div className={styles.headerContainer}>NoteBook</div>
+            <div className={styles.headerContainer}>MyTo-Do</div>
         </header>
     )
 }
