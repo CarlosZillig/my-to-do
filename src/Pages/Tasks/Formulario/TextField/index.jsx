@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from "./TextField.module.scss"
+import Button from '../../../../Components/Button';
 
 const TextField = ({id, type, title, setTitle, desc, setDesc}) => {
     return(
@@ -25,6 +26,7 @@ const TextField = ({id, type, title, setTitle, desc, setDesc}) => {
                     onChange={event => setDesc(event.target.value)}
                 />
             </div>
+            <Button type='submit'>Adicionar</Button>
         </div> 
     )
 }

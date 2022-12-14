@@ -10,20 +10,22 @@
 }
 
 .list-section {
-    padding: $padding-hori;
+    padding: 0 2em;
     display: flex;
+
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     .list {
         &-item{
             border: 1px solid $purple;
+            position: relative;
             border-radius: 10px;
             width: 100%;
             height: 150px;
-            margin: $padding-vert;
+            margin: 2em 0; 
             .item-title {
                 padding: 1em;
-                background-image: linear-gradient(25deg, $purple 30%, yellow);
+                background-image: linear-gradient(123deg, $purple 30%, rgb(33, 25, 109));
                 border-radius: 10px 10px 0 0;
                 color: rgb(255, 255, 255);
                 font-weight: 500;
@@ -32,6 +34,50 @@
                 padding: $padding-hori;
                 margin: 0.5em 0;
             }
+            .item-delete {
+                position: absolute;
+                top: 88%;
+                left: 8%;
+                border: 1px solid $purple;
+                background-color: $white;
+                padding: 0.7em;
+                border-radius: 50%;
+                color: $black;
+                opacity: 0;
+                transition: .5s;
+            }
+            &:hover {
+                .item-delete {
+                    opacity: 1;
+                    animation: rotate 2s;
+                }
+            }
         }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .list-section {
+        padding: 0 5em;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .title {
+        text-align: left;
+        padding: 1em 4em;
+    }
+    .list-section {
+        border-left: 1px solid $gray;
+        padding: 0 5em;
     }
 }

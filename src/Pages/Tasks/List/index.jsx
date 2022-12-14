@@ -1,8 +1,9 @@
 import styles from './List.module.scss'
+import { AiOutlineDelete } from 'react-icons/ai'
 
 const List = ({listTask}) => {
     return(
-        <div>
+        <div className={styles.container}>
             <h2 className={styles.title}>Suas tarefas</h2>
             <section className={styles['list-section']}>
                 <ul className={styles.list}>
@@ -15,6 +16,7 @@ const List = ({listTask}) => {
                                 <p className={styles['item-desc']}>
                                     {item.desc}
                                 </p>
+                                <AiOutlineDelete className={styles['item-delete']}/>
                             </li>
                         ))
                     }

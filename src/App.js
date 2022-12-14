@@ -4,6 +4,7 @@ import Form from './Pages/Tasks/Formulario';
 import Header from './Components/Header';
 import List from './Pages/Tasks/List';
 import uuid from 'react-uuid';
+import styles from './App.module.scss'
 
 function App() {
   const [title, setTitle] = useState("");
@@ -27,14 +28,16 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Form 
-        title={title} 
-        setTitle={setTitle}
-        desc={desc}
-        setDesc={setDesc}
-        addTask={addTask}
-      />
-      <List listTask={listTask}/>
+      <div className={styles.container}>
+        <Form
+          title={title}
+          setTitle={setTitle}
+          desc={desc}
+          setDesc={setDesc}
+          addTask={addTask}
+        />
+        <List listTask={listTask} />
+      </div>
     </div>
   );
 }

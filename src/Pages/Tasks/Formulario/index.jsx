@@ -18,7 +18,7 @@ const Form = ({ title, setTitle, desc, setDesc, addTask }) => {
         }
     }
 
-    const [form, setForm] = useState(false)
+    const [form, setForm] = useState(true)
     const [addTaskBtn, setAddTaskBtn] = useState(true)
     function showForm() {
         setForm(!form)
@@ -30,13 +30,15 @@ const Form = ({ title, setTitle, desc, setDesc, addTask }) => {
             <div className={styles.addTaskBtn__container}>
                 <button className={classNames({
                     [styles.addTaskBtn]: true,
-                    [styles.addTaskBtn__off]: addTaskBtn == false
+                    [styles.addTaskBtn__off]: addTaskBtn == true
                 })} onClick={showForm}>+</button>
             </div>
-            <form className={classNames({
+            <form 
+            className={classNames({
                 [styles.formulario]: true,
                 [styles.formularioOff]: form == false
-            })} onSubmit={addTaskForm}>
+            })} 
+            onSubmit={addTaskForm}>
                 <TextField
                     type="text"
                     id="inputTitle"
@@ -46,7 +48,6 @@ const Form = ({ title, setTitle, desc, setDesc, addTask }) => {
                     desc={desc}
                     setDesc={setDesc}
                 />
-                <Button type='submit'>Adicionar</Button>
                 <span className={styles.erro}>{erro}</span>
             </form>
         </>
