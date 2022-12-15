@@ -16,6 +16,7 @@
     box-sizing: border-box;
     position: relative;
     .addTaskBtn {
+        background-color: $dark;
         border-radius: 10px;
         border: 1px solid $gray;
         font-size: 1.3em;
