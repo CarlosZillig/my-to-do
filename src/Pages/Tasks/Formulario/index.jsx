@@ -1,20 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
 import uuid from 'react-uuid';
-import Button from '../../../Components/Button';
 import styles from "./Formulario.module.scss";
 import TextField from "./TextField/index";
 import classNames from 'classnames';
 
 const Form = ({ title, setTitle, desc, setDesc, addTask }) => {
-    const [erro, setErro] = useState('')
+    const [errorString, setErrorString] = useState('');
     function addTaskForm(e) {
         e.preventDefault()
         if (title !== '' && desc !== '') {
             addTask({ task: title, desc: desc, id: uuid() })
-            setErro('')
+            setErrorString('')
         } else {
-            setErro('Há campos vazios')
+            setErrorString('Há campos vazios')
         }
     }
 
@@ -30,13 +29,13 @@ const Form = ({ title, setTitle, desc, setDesc, addTask }) => {
             <div className={styles.addTaskBtn__container}>
                 <button className={classNames({
                     [styles.addTaskBtn]: true,
-                    [styles.addTaskBtn__off]: addTaskBtn == true
+                    [styles.addTaskBtn__off]: addTaskBtn === true
                 })} onClick={showForm}>+</button>
             </div>
             <form 
             className={classNames({
                 [styles.formulario]: true,
-                [styles.formularioOff]: form == false
+                [styles.formularioOff]: form === false
             })} 
             onSubmit={addTaskForm}>
                 <TextField
@@ -48,7 +47,7 @@ const Form = ({ title, setTitle, desc, setDesc, addTask }) => {
                     desc={desc}
                     setDesc={setDesc}
                 />
-                <span className={styles.erro}>{erro}</span>
+                <span className={styles.error}>{errorString}</span>
             </form>
         </>
     )

@@ -4,7 +4,7 @@
     padding: $padding-hori;
     text-align: center;
     position: relative;
-    .erro {
+    .error {
         font-family: 'Roboto', sans-serif;
         color: $red;
         display: block;
@@ -41,7 +41,6 @@
 @media screen and (min-width: 1025px) {
     .formulario {
         width: 100%;
-        grid-column: 1;
     }
 
     .addTaskBtn__container {

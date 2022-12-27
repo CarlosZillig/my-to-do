@@ -1,0 +1,82 @@
+@import '../../styles/variables';
+
+.nav {
+  background-color: rgb(18, 18, 18);
+  border-radius: 0 20px 20px 0;
+  &-list {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    height: 100%;
+    align-items: center;
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1em 0.5em;
+      position: relative;
+      height: 50%;
+      .desc {
+        font-family: $font;
+        color: $gray;
+        display: none;
+        font-size: 14px;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.icon {
+  font-size: 22px;
+  color: $gray;
+  transition: .2s;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1024px){
+  .nav {
+    border-radius: 0 0 0 0;
+    &-list {
+      padding: 1em 3em;
+      .nav-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .desc {
+          padding: 0 1em;
+          font-size: 16px;
+          display: block;
+        }
+      }
+    }
+   }
+   .icon {
+    font-size: 25px;
+   }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+  .hidden {
+    display: block;
+   }
+}
+
+@media screen and (min-width: 1300px){
+ .nav {
+  &-list {
+    .nav-item {
+      .desc {
+        display: block;
+      }
+    }
+  }
+ }
+ .hidden {
+  display: block;
+ }
+}

@@ -14,7 +14,6 @@ const List = ({ listTask }) => {
                                 <div className={styles['item-container']}>
                                     <h4 className={styles['item-title']}>
                                         {item.task}
-                                        {console.log(item.task.length)}
                                     </h4>
                                     <div className={styles['item-config']}>
                                         <BiEdit className={styles['item-edit']}/>
