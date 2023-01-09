@@ -3,11 +3,22 @@
 @import '../../../App.scss';
 
 .title {
-    text-align: center;
-    padding: 1em 0 0.5em 0;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     color: $white;
+}
+
+.list-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em;
+    align-items: center;
+    .list-delete {
+        padding: 0.5em 1em;
+        background-color: transparent;
+        color: #fff;
+        border-radius: 10px;
+    }
 }
 
 .list-section {

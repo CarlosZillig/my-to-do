@@ -7,8 +7,10 @@ import classNames from 'classnames';
 
 const Form = ({ title, setTitle, desc, setDesc, addTask }) => {
     const [errorString, setErrorString] = useState('');
+
+    //Função responsavel por adicionar um novo objeto á lista
     function addTaskForm(e) {
-        e.preventDefault()
+        e.preventDefault();
         if (title !== '' && desc !== '') {
             addTask({ task: title, desc: desc, id: uuid() })
             setErrorString('')

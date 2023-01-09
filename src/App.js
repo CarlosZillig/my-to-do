@@ -11,20 +11,26 @@ function App() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
-  let tasks = [{
-    task: "a",
-    desc: "b",
-    id: uuid()
-  }]
+  //State responsavel por renderizar nossa lista de tasks
+  const [listTask, setListTask] = useState(JSON.parse(localStorage.getItem('tasks')))
 
-  const [listTask, setListTask] = useState(tasks)
+  //State responsavel por guardar todas as tasks da lista
+  const [tasks, setTasks] = useState(listTask)
 
   //Adicionando tarefas para o estado
   function addTask(task) {
-    setListTask([...listTask, task])
+    setTasks([...tasks, task])
     setDesc('')
     setTitle('')
   }
+
+  const handleDelete = () => {
+    setTasks([])
+  }
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   //Funções do menu mobile
   const [menu, setMenu] = useState(false)
@@ -45,7 +51,7 @@ function App() {
           setDesc={setDesc}
           addTask={addTask}
         />
-        <List listTask={listTask} />
+        <List tasks={tasks} handleDelete={handleDelete}/>
       </div>
     </div>
   );
