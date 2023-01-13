@@ -35,3 +35,10 @@
   </li>
 </ul>
 
+<h3>Rotas:</h3>
+<ul>
+  <li>/: Rota responsável por renderizar a lista de tarefas (index)</li>
+  <li>/apagados: Rota responsável por renderizar a lista de tarefas apagadas</li>
+  <li>/finalizados: Rota responsável por renderizar a lista de tarefas finalizadas</li>
+</ul>
+
