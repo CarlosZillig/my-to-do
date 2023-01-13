@@ -2,31 +2,30 @@ import styles from './List.module.scss'
 import { AiOutlineDelete } from 'react-icons/ai'
 import { BiEdit } from 'react-icons/bi'
 import { GiBroom } from 'react-icons/gi'
-import { useEffect } from 'react'
 
-const List = ({tasks, handleDelete}) => {
+const List = ({list, handleDeleteAll, handleRemoveTask, title}) => {
     return (
-        <section>
+        <section className={styles['list-section']}>
             <div className={styles['list-container']}>
-                <h2 className={styles.title}>Suas tarefas</h2>
-                <button className={styles['list-delete']} onClick={handleDelete}><GiBroom /></button>
+                <h2 className={styles.title}>{title}</h2>
+                <button className={styles['list-delete']} onClick={handleDeleteAll}><GiBroom /></button>
             </div>
-            <div className={styles['list-section']}>
+            <div className={styles['list-group']}>
                 <ul className={styles.list}>
-                    {(tasks !== null || '') &&
-                        tasks.map(task => (
-                            <li className={styles['list-item']} key={task.id}>
+                    {(list !== null || '') &&
+                        list.map((item, index) => (
+                            <li className={styles['list-item']} key={item.id}>
                                 <div className={styles['item-container']}>
                                     <h4 className={styles['item-title']}>
-                                        {task.task}
+                                        {item.task}
                                     </h4>
                                     <div className={styles['item-config']}>
                                         <BiEdit className={styles['item-edit']} />
-                                        <AiOutlineDelete className={styles['item-delete']} />
+                                        <AiOutlineDelete className={styles['item-delete']} onClick={() => handleRemoveTask(index)} />
                                     </div>
                                 </div>
                                 <p className={styles['item-desc']}>
-                                    {task.desc}
+                                    {item.desc}
                                 </p>
                             </li>
                         ))

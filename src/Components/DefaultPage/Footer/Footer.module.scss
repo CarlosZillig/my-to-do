@@ -1,0 +1,10 @@
+@import '../../../styles/variables';
+@import '../../../styles/breakpoints';
+
+.footer {
+  text-align: center;
+  color: $gray;
+  font-family: 'Roboto';
+  padding: 2em 0;
+  grid-column: 2 span;
+}

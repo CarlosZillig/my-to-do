@@ -1,0 +1,12 @@
+@import '../../styles/breakpoints';
+
+.container {
+  max-height: 100vh;
+}
+
+@media screen and (min-width: $tablet) {
+  .container {
+    display: grid;
+    grid-template-columns: 6% 1fr;
+  }
+}

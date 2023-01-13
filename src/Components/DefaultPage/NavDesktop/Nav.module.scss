@@ -1,13 +1,13 @@
-@import '../../styles/variables';
+@import '../../../styles/variables';
+@import '../../../styles/breakpoints';
 
 .nav {
-  background-color: rgb(18, 18, 18);
-  border-radius: 0 20px 20px 0;
+  grid-column: 1;
   &-list {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    height: 100%;
-    align-items: center;
+    height: 75vh;
+    padding: 2em 0;
     .nav-item {
       display: flex;
       flex-direction: column;
@@ -39,7 +39,7 @@
   display: none;
 }
 
-@media screen and (min-width: 0px) and (max-width: 1024px){
+@media screen and (min-width: $mobile) and (max-width: $tablet){
   .nav {
     border-radius: 0 0 0 0;
     &-list {
@@ -61,13 +61,13 @@
    }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1300px) {
+@media screen and (min-width: $tablet) and (max-width: $desktop) {
   .hidden {
     display: block;
    }
 }
 
-@media screen and (min-width: 1300px){
+@media screen and (min-width: $desktop){
  .nav {
   &-list {
     .nav-item {

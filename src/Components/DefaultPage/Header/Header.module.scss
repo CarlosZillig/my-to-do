@@ -1,9 +1,10 @@
-@import '../../styles/variables';
+@import '../../../styles/variables';
+@import '../../../styles/breakpoints';
 
 .header {
     background-image: linear-gradient(to right, $dark, $back-dark-color);
     height: 8vh;
-    font-family: 'Roboto Mono', monospace;
+    font-family: $font;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,7 +12,7 @@
     -webkit-box-shadow: 0px 1px 5px 0px rgba(189,49,189,1);
     -moz-box-shadow: 0px 1px 5px 0px rgba(189,49,189,1);
     box-shadow: 0px 1px 5px 0px rgba(189,49,189,1);
-
+    grid-column: 2 span;
     .headerContainer {
         font-size: 0.8em;
         color: $white;
@@ -23,7 +24,7 @@
     }
 }
 
-@media screen and (min-width: 767px) and (max-width: 1024px) {
+@media screen and (min-width: 767px) and (max-width: $tablet) {
     .header {
         padding: 0 3em;
 
@@ -37,11 +38,10 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: $tablet) {
     .header {
         height: 5vh;
         padding: 0 2em;
-
         .headerContainer {
             font-size: 1.1em;
         }

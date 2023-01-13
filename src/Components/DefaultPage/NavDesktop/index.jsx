@@ -1,37 +1,33 @@
 import React from 'react';
-import styles from './Nav.module.scss'
+import styles from '../NavDesktop/Nav.module.scss'
 import { AiOutlineUnorderedList, AiOutlineDelete, AiFillGithub } from 'react-icons/ai'
 import { BsListCheck } from 'react-icons/bs'
 import { SiAboutdotme } from 'react-icons/si'
 import classNames from 'classnames';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = ({ menu }) => {
     const menuItems = [
         {
             name: <AiOutlineUnorderedList className={styles.icon} />,
             desc: 'Tarefas',
-            to: 'google.com.br',
+            to: '/',
         },
         {
             name: <AiOutlineDelete className={styles.icon} />,
             desc: 'Apagados',
-            to: 'google.com.br',
+            to: '/apagados',
         },
         {
             name: <BsListCheck className={styles.icon} />,
             desc: 'Finalizados',
-            to: 'google.com.br',
+            to: '/finalizados',
         },
         {
             name: <SiAboutdotme className={styles.icon} />,
             desc: 'Sobre nós',
-            to: 'google.com.br',
-        },
-        {
-            name: <AiFillGithub className={styles.icon} />,
-            desc: 'Repositório',
-            to: 'google.com.br',
+            to: '/sobre',
         },
     ]
 
@@ -42,13 +38,20 @@ const Nav = ({ menu }) => {
         })}>
             <ul className={styles['nav-list']}>
                 {menuItems.map((item) => (
-                    <a href={item.to} key={item.desc}>
+                    <Link to={item.to} key={item.desc}>
                         <li className={styles['nav-item']}>
                             <p className={styles.title}>{item.name}</p>
                             <span className={styles.desc}>{item.desc}</span>
                         </li>
-                    </a>
+                    </Link>
                 ))}
+                {/*Adicionando uma ancora html para o github, não achei outra maneira para fazer isso*/}
+                <a href='https://github.com/CarlosZillig/my-to-do'>
+                    <li className={styles['nav-item']}>
+                        <p className={styles.title}><AiFillGithub className={styles.icon}/></p>
+                        <span className={styles.desc}>Repositório</span>
+                    </li>
+                </a>
             </ul>
         </nav>
     )

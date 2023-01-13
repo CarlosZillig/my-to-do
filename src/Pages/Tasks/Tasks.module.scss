@@ -1,0 +1,12 @@
+@import '../../styles/breakpoints';
+
+@media screen and (min-width: $tablet) {
+  .tasks {
+    grid-column: 2;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4em 0;
+  }
+}
