@@ -3,6 +3,8 @@ import '../../App.scss';
 import Form from './Formulario';
 import List from '../../Components/List';
 import styles from './Tasks.module.scss'
+import { RecoilRoot, useRecoilValue, useSetRecoilState } from 'recoil';
+import listTasksState from '../../states/atomList'
 
 function Tasks() {
   const [title, setTitle] = useState("");
@@ -11,8 +13,11 @@ function Tasks() {
   //State responsavel por renderizar nossa lista de tasks
   const [listTask, setListTask] = useState(JSON.parse(localStorage.getItem('tasks')))
 
-  //State responsavel por guardar todas as tasks da lista
-  const [tasks, setTasks] = useState(listTask)
+  //Iniciando um setter na listTasksState
+  const setTasks = useSetRecoilState(listTasksState)
+
+  //Iniciando uma state que guarda o valor da listTasksState
+  const tasks = useRecoilValue(listTasksState)
 
   //Adicionando tarefas para o state
   function addTask(task) {
@@ -28,6 +33,7 @@ function Tasks() {
     } else {
       return;
     }
+    setTasks(listTask)
   }, [])
 
   //Função para excluir todas as tarefas permanentemente
@@ -48,18 +54,20 @@ function Tasks() {
   }, [tasks])
 
   return (
-    <div className={styles.tasks}>
-      <div className={styles.container}>
-        <Form
-          title={title}
-          setTitle={setTitle}
-          desc={desc}
-          setDesc={setDesc}
-          addTask={addTask}
-        />
-        <List list={tasks} handleDeleteAll={handleDeleteAll} handleRemoveTask={handleRemoveTask} title='Suas tarefas' />
+    <RecoilRoot>
+      <div className={styles.tasks}>
+        <div className={styles.container}>
+          <Form
+            title={title}
+            setTitle={setTitle}
+            desc={desc}
+            setDesc={setDesc}
+            addTask={addTask}
+          />
+          <List list={tasks} handleDeleteAll={handleDeleteAll} handleRemoveTask={handleRemoveTask} title='Suas tarefas' />
+        </div>
       </div>
-    </div>
+    </RecoilRoot>
   );
 }
 
