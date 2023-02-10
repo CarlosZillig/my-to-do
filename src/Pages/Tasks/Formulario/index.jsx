@@ -4,16 +4,22 @@ import uuid from 'react-uuid';
 import styles from "./Formulario.module.scss";
 import TextField from "./TextField/index";
 import classNames from 'classnames';
+import useAddTask from '../../../states/hooks/taskList/useAddTask';
+import useTasksSetter from '../../../states/hooks/taskList/useTasksSetter';
+import useTasksList from '../../../states/hooks/taskList/useTasksList';
 
-const Form = ({ title, setTitle, desc, setDesc, addTask }) => {
+const Form = ({ title, setTitle, desc, setDesc }) => {
     const [errorString, setErrorString] = useState('');
+    const addTask = useAddTask()
 
     //Função responsavel por adicionar um novo objeto á lista
     function addTaskForm(e) {
         e.preventDefault();
         if (title !== '' && desc !== '') {
-            addTask({ task: title, desc: desc, id: uuid() })
+            addTask({task: title, desc: desc, id: uuid()})
             setErrorString('')
+            setTitle('')
+            setDesc('')
         } else {
             setErrorString('Há campos vazios')
         }
