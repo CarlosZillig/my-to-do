@@ -6,13 +6,29 @@ import useDeleteTask from '../../states/hooks/taskList/useDeleteTask'
 import useDeleteAll from '../../states/hooks/taskList/useDeleteAll'
 import useTasksList from '../../states/hooks/taskList/useTasksList'
 import useTrashList from '../../states/hooks/trashList/useTrashList'
+import useUpdateTask from '../../states/hooks/taskList/useUpdateTask'
+import useTasksSetter from '../../states/hooks/taskList/useTasksSetter'
 
 const List = ({ title, list }) => {
 
     const handleRemoveTask = useDeleteTask();
     const handleDeleteAll = useDeleteAll();
+    const setTask = useTasksSetter()
     const trash = useTrashList();
     const tasks = useTasksList();
+
+    const handleUpdateTask = (item) => {
+        const newTasks = tasks.map((task) => {
+            if(task.id === item) {
+                return {
+                    ...task,
+                    task: 1
+                }
+            }
+            return task
+        })
+        setTask(newTasks)
+    }
 
     return (
         <section className={styles['list-section']}>
@@ -23,7 +39,7 @@ const List = ({ title, list }) => {
             
             <div className={styles['list-group']}>
             {tasks.length == 0 && <div className={styles.placeholder}>Nenhuma tarefa por aqui...</div>}
-            
+
                 {list === 'tasks' && <ul className={styles.list}>
                     {tasks.map((item) => (
                         <li className={styles['list-item']} key={item.id}>
@@ -32,7 +48,7 @@ const List = ({ title, list }) => {
                                     {item.task}
                                 </h4>
                                 <div className={styles['item-config']}>
-                                    <BiEdit className={styles['item-edit']} />
+                                    <BiEdit className={styles['item-edit']} onClick={() => handleUpdateTask(item.id)}/>
                                     <AiOutlineDelete className={styles['item-delete']} onClick={() => handleRemoveTask(item)} />
                                 </div>
                             </div>

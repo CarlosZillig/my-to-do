@@ -7,7 +7,6 @@ import useTrashSetter from '../trashList/useTrashSetter'
 const useDeleteTask = () => {
   const setTask = useTasksSetter();
   const tasks = useTasksList();
-  const trash = useTrashList();
   const setTrash = useTrashSetter();
   return (item) => {  
     let removedItem = tasks.filter(task => task.id === item.id)

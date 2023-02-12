@@ -15,16 +15,6 @@ const Nav = ({ menu }) => {
             to: '/',
         },
         {
-            name: <AiOutlineDelete className={styles.icon} />,
-            desc: 'Apagados',
-            to: '/apagados',
-        },
-        {
-            name: <BsListCheck className={styles.icon} />,
-            desc: 'Finalizados',
-            to: '/finalizados',
-        },
-        {
             name: <SiAboutdotme className={styles.icon} />,
             desc: 'Sobre nós',
             to: '/sobre',
