@@ -1,3 +1,4 @@
+import useTrashList from "../trashList/useTrashList";
 import useTasksList from "./useTasksList";
 import useTasksSetter from "./useTasksSetter";
 

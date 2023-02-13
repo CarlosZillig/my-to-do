@@ -1,12 +1,15 @@
+import { RecoilRoot } from "recoil";
 import Dump from "../Dump";
 import Tasks from "../Tasks";
 
 const Dashboard = () => {
-  return(
-    <main>
-      <Tasks />
-      <Dump />
-    </main>
+  return (
+    <RecoilRoot>
+      <main>
+        <Tasks />
+        <Dump />
+      </main>
+    </RecoilRoot>
   )
 }
 

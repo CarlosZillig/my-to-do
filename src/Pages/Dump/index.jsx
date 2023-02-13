@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { RecoilRoot } from 'recoil';
+import useTrashList from '../../states/hooks/trashList/useTrashList';
 import styles from './Dump.module.scss';
-import List from "../../Components/List";
-import useTrashList from "../../states/hooks/trashList/useTrashList";
+import ListDump from './ListDump';
 
 const Dump = () => {
   return (
     <section className={styles['dump-section']}>
-      <List title='Apagados' list='trash' />
+      <ListDump />
     </section>
   )
 }

@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Tasks from "./Pages/Tasks/index";
 import DefaultPage from "./Components/DefaultPage";
-import Dump from "./Pages/Dump";
 import Dashboard from "./Pages/Dashboard";
 
 const AppRouter = () => {
