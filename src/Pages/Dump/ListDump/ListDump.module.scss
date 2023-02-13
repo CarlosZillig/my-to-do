@@ -1,4 +1,70 @@
-.list-dump {
-  padding: 0 5em;
-  color: #fff;
+@import '../../../styles/breakpoints';
+@import '../../../styles/variables';
+
+.list-dump--container {
+  padding: 1em;
+  color: $white;
+  border-radius: 10px;
+  background: $dark;
+  box-shadow: inset 41px 41px 82px #191919,
+    inset -41px -41px 82px #1f1f1f;
+  min-height: 200px;
+  margin: 1em;
+  .list-dump {
+
+    .dump-clear {
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    .list-item {
+      .item-container {
+        padding: 0.5em 0;
+
+        .item-position {
+          padding: 0 1em;
+        }
+      }
+    }
+  }
+
+  .list-total {
+    width: 100%;
+    margin: 1em 0;
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: $tablet) {}
+
+@media screen and (min-width: $tablet) {
+  .list-dump--container {
+    padding: 1em;
+    max-height: 200px;
+    grid-column: 2;
+    width: 70%;
+    justify-self: center;
+    .list-dump {
+      .dump-clear {
+        text-align: center;
+        padding: 1em 0;
+      }
+
+      .list-item {
+        .item-container {
+          padding: 0.5em 0;
+
+          .item-position {
+            padding: 0 1em;
+          }
+        }
+      }
+    }
+
+    .list-total {
+      width: 100%;
+      margin: 1em 0;
+      text-align: right;
+    }
+  }
 }

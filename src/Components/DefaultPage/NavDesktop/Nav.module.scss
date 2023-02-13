@@ -44,6 +44,9 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        &:hover {
+          border-left: 2px solid $purple;
+        }
         .desc {
           padding: 0 1em;
           font-size: 16px;
@@ -61,17 +64,29 @@
   .hidden {
     display: block;
    }
+   .nav {
+    &-list {
+      .nav-item {
+        &:hover {
+          border-left: 2px solid $purple;
+        }
+      }
+    }
+   }
 }
 
 @media screen and (min-width: $desktop){
  .nav {
   &-list {
     position: fixed;
-    background-color: rgb(19, 19, 19);
+    background-image: linear-gradient(to bottom, $dark, $back-dark-color);
     height: 100vh;
     width: 100px;
     padding: 5em 0;
     .nav-item {
+      &:hover {
+        border-left: 2px solid $purple;
+      }
       .desc {
         display: block;
       }
